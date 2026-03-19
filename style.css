@@ -1,0 +1,348 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: radial-gradient(circle at top, #111, #000);
+  color: #fff;
+  body {
+  font-family: Arial, sans-serif;
+  color: #fff;
+  background: #000;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(201,7,7,0.35), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(201,7,7,0.25), transparent 50%),
+    
+    /* luz branca suave */
+    radial-gradient(circle at 50% 50%, rgba(255,255,255,0.08), transparent 60%),
+
+    #000;
+
+  filter: blur(120px);
+  z-index: -2;
+
+  animation: backgroundMove 30s ease-in-out infinite alternate;
+}
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(201,7,7,0.6),
+    transparent 60%
+  );
+
+  opacity: 0.5;
+  z-index: -1;
+
+  animation: moveSmooth 25s ease-in-out infinite alternate,
+             pulseEnergy 6s ease-in-out infinite;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(201, 7, 7, 0.5), transparent 60%);
+  
+  opacity: 0.6;
+  z-index: -1;
+
+  animation: moveGlow 10s infinite alternate ease-in-out;
+}
+
+body:hover::after {
+  opacity: 1;
+}
+body::after {
+  background: radial-gradient(circle at var(--x) var(--y), rgba(201, 7, 7, 0.6), transparent 60%);
+}
+/* ANIMAÇAO AUTOMATICA */
+/* @keyframes moveGlow {
+  0% {
+    animation: moveGlow 20s infinite alternate ease-in-out;
+    --x: 20%;
+    --y: 30%;
+  }
+  25% {
+    --x: 80%;
+    --y: 20%;
+  }
+  50% {
+    --x: 60%;
+    --y: 80%;
+  }
+  75% {
+    --x: 30%;
+    --y: 70%;
+  }
+  100% {
+    --x: 70%;
+    --y: 40%; */
+    @keyframes moveSmooth {
+  0%   { --x: 20%; --y: 30%; }
+  20%  { --x: 80%; --y: 20%; }
+  40%  { --x: 70%; --y: 80%; }
+  60%  { --x: 30%; --y: 70%; }
+  80%  { --x: 60%; --y: 40%; }
+  100% { --x: 50%; --y: 50%; }
+}
+@keyframes pulseEnergy {
+  0% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: blur(60px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+    filter: blur(90px);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(1);
+    filter: blur(60px);
+  }
+}
+@keyframes backgroundMove {
+  0% {
+    background-position: 20% 20%, 80% 80%, 50% 50%;
+  }
+  50% {
+    background-position: 70% 30%, 30% 70%, 60% 40%;
+  }
+  100% {
+    background-position: 40% 60%, 60% 40%, 50% 50%;
+  }
+}
+  
+
+/* ANIMAÇAO AUTOMATICA */
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+  backdrop-filter: blur(10px);
+}
+
+/* NAV */
+nav a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #aaa;
+  transition: 0.3s;
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #c90707;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #fff;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* BOTÃO HEADER */
+.btn {
+  background: linear-gradient(135deg, #c90707, #ff2e63);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 10px #c90707;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #c90707;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 50px;
+  gap: 40px;
+  flex-direction: row-reverse;
+}
+
+/* TEXTO */
+.hero-text {
+  max-width: 500px;
+}
+
+.hero-text h1 {
+  font-size: 52px;
+  margin-bottom: 15px;
+}
+
+/* GRADIENTE MAIS FORTE */
+.gradient {
+  background: linear-gradient(90deg, #c90707, #ff2e63, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* PARÁGRAFO */
+.hero-text p {
+  color: #bbb;
+  margin: 20px 0;
+  line-height: 1.6;
+}
+
+/* BOTÕES */
+.buttons {
+  margin-top: 25px;
+}
+
+.buttons button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: 1px solid #c90707;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button:hover {
+  background: #c90707;
+  box-shadow: 0 0 15px #c90707;
+}
+
+/* BOTÃO PRINCIPAL */
+.buttons .primary {
+  background: linear-gradient(135deg, #c90707, #ff2e63);
+  color: #fff;
+  border: none;
+  box-shadow: 0 0 10px #c90707;
+}
+
+.buttons .primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #c90707;
+}
+
+/* IMAGEM */
+.hero img {
+  width: 350px;
+  border-radius: 20px;
+  border: 2px solid #c90707;
+  box-shadow: 0 0 25px rgba(201, 7, 7, 0.5);
+  transition: 0.4s;
+}
+
+.hero img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(201, 7, 7, 0.8);
+}
+
+/* RESPONSIVO */
+@media(max-width: 800px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header {
+    padding: 20px;
+  }
+}
+/* SEÇÕES */
+section {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  border: 1px solid #222;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border: 1px solid #c90707;
+  box-shadow: 0 0 20px rgba(201, 7, 7, 0.4);
+}
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.4s ease;
+}
+
+
+/* ABOUT */
+.about p {
+  max-width: 600px;
+  margin: auto;
+  color: #aaa;
+}
+
+/* CONTACT */
+.contact p {
+  margin-bottom: 20px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 1px solid #222;
+  color: #777;
+}

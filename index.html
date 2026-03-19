@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio K10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h2>K10</h2>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Serviços</a>
+    <a href="#projects">Projetos</a>
+    <a href="#about">Sobre</a>
+    <a href="#contact">Contato</a>
+  </nav>
+  <button class="btn" onclick="contato()">Lets Talk</button>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <h1>Olá, eu sou <span class="gradient">K10.</span></h1>
+    <h1>Creative Developer</h1>
+    <h1>No Brasil.</h1>
+
+    <p>
+      Sou estudante de informática focado em desenvolvimento web.
+      Aprendendo HTML, CSS e JavaScript.
+    </p>
+
+    <div class="buttons">
+      <button class="primary" onclick="contato()">Get in Touch</button>
+      <button onclick="scrollToSection('projects')">View Works</button>
+    </div>
+  </div>
+
+  <img src="https://picsum.photos/400/500" alt="foto">
+</section>
+
+<!-- SERVIÇOS -->
+<section class="services" id="services">
+  <h2>Serviços</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Web Design</h3>
+      <p>Criação de interfaces modernas e responsivas.</p>
+    </div>
+
+    <div class="card">
+      <h3>Front-End</h3>
+      <p>Desenvolvimento com HTML, CSS e JS.</p>
+    </div>
+
+    <div class="card">
+      <h3>UI/UX</h3>
+      <p>Foco na experiência do usuário.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETOS -->
+<section class="projects" id="projects">
+  <h2>Projetos</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Projeto 1</h3>
+      <p>Site simples com HTML e CSS.</p>
+    </div>
+
+    <div class="card">
+      <h3>Projeto 2</h3>
+      <p>Landing page moderna.</p>
+    </div>
+
+    <div class="card">
+      <h3>Projeto 3</h3>
+      <p>Projeto com JavaScript básico.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="about" id="about">
+  <h2>Sobre mim</h2>
+  <p>
+    Sou estudante de informática apaixonado por tecnologia.
+    Atualmente focado em desenvolvimento web e sempre buscando evoluir.
+  </p>
+</section>
+
+<!-- CONTATO -->
+<section class="contact" id="contact">
+  <h2>Contato</h2>
+  <p>Quer trocar uma ideia ou fazer um projeto?</p>
+  <button class="btn" onclick="contato()">Me chama</button>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 K10 - Todos os direitos reservados</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
